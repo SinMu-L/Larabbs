@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
+    use Traits\ActiveUserHelper;
     use HasApiTokens, HasFactory, Notifiable, MustVerifyEmailTrait;
 
     use HasRoles;
@@ -21,6 +22,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     use Notifiable {
         notify as protected laravelNotify;
     }
+
 
     public function notify($instance)
     {
