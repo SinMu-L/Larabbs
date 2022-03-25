@@ -21,7 +21,7 @@ class UserObserver
 
     public function saving(User $user){
 	if(empty($user->avatar)){
-	    $user->avatar = 'http://bbs.sinmu.ltd/uploads/images/avatars/202203/18/1_1647595580_waRu1IerSk.jpg';
+	    $user->avatar = 'https://www.runoob.com/try/demo_source/paris.jpg';
 	}
     }
 }
