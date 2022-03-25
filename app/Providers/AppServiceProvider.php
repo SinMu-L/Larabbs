@@ -33,10 +33,12 @@ class AppServiceProvider extends ServiceProvider
 
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
 
 
         \Illuminate\Pagination\Paginator::useBootstrap();
         View::share('categories',Category::all());
         Topic::observe(TopicObserver::class);
+        
     }
 }
