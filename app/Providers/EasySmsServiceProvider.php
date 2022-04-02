@@ -18,6 +18,7 @@ class EasySmsServiceProvider extends ServiceProvider
             return new EasySms(config('easysms'));
         });
 
+
         $this->app->alias(EasySms::class, 'easysms');
     }
 }
