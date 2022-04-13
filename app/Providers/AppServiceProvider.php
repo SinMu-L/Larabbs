@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\Topic;
 use App\Observers\TopicObserver;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
@@ -39,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Pagination\Paginator::useBootstrap();
         View::share('categories',Category::all());
         Topic::observe(TopicObserver::class);
-        
+        JsonResource::withoutWrapping();
+
     }
 }
